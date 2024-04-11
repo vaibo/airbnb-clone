@@ -1,0 +1,158 @@
+@import '../../styles/colors.scss';
+
+.airbnb-footer-container{
+    background-color: #F7F7F7;
+    &_footer-one{
+        border-bottom: 1px solid $boder-color;
+        padding: 80px 0px 48px 0px;
+        .footer-future-gateway-menu-box{
+            .title{
+                font-size: 22px;
+                line-height: 24px;
+                margin-bottom: 24px;
+            }
+            .menu-list-box{
+                .main-menu-box{
+                    display: flex;
+                    align-items: center;
+                    // border-bottom: 2px solid #DDDDDD;
+                    .main-menu-label{
+                        margin-right: 32px;
+                        padding-bottom: 16px;
+                        .text{
+                            font-size: 14px;
+                            line-height: 16px;
+                            
+                        }
+                        &.active{
+                            position: relative;
+                            &::before{
+                                content: '';
+                                position: absolute;
+                                background-color: #222222;
+                                height: 2px;
+                                width: 100%;
+                                bottom: 1px;
+                            }
+                        }
+                    }
+                }
+                .border-line{
+                    height: 1px;
+                    width: 100%;
+                    background-color: #DDDDDD;
+                }
+                .submenu-box{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                    padding-top: 32px;
+                    .submenu-text-box{
+                        .submenu-lebel{
+                            font-size: 14px;
+                            line-height: 16px;
+                            font-weight: 600;
+                        }
+                        .submenu-sublabel{
+                            font-size: 14px;
+                            line-height: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &_footer-two{
+        &_contain{
+            .menu-box{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                padding-block: 48px;
+                .each-menu-box{
+                
+                    .title{
+                        font-size: 14px;
+                        line-height: 16px;
+                        font-weight: 600;
+                        margin-bottom: 12px;
+                    }
+                    .ul{
+                        list-style: none;
+                        display: grid;
+                        gap: 12px;
+                        .li{
+                            font-size: 14px;
+                            line-height: 16px;
+
+                        }
+                    }
+                }
+            }
+            .footer-des{
+                border-top: 1px solid #DDDDDD;
+                padding: 24px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .footer-des-menu{
+                    display: flex;
+                    align-items: center;
+                    .airbnb-inc-text{
+                        font-size: 14px;
+                        line-height: 16px;
+                    }
+                    .menu-list{
+                        display: flex;
+                        align-items: center;
+                        .menu{
+                            display: flex;
+                            align-items: center;
+                            .dot-span{
+                                width: 19px;
+                                display: inline-block;
+                                text-align: center;
+                                font-size: 14px;
+                                line-height: 16px;
+                            }
+                            .menu-text{
+                                font-size: 14px;
+                                line-height: 16px;
+                            }
+                        }
+                    }
+                }
+                .footer-des-menu-two{
+                    display: flex;
+                    align-items: center;
+                    gap: 24px;
+                    .language-btn{
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        .world-language-img{
+                            width: 16px;
+                            height: 16px;
+                        }
+                        .lan-text{
+                            font-size: 14px;
+                            line-height: 16px;
+                        }
+                    }
+                    .current-type{
+                        .currency-type-text{
+                            font-size: 14px;
+                            line-height: 16px;
+                        }
+                    }
+                    .social-meida-box{
+                        display: flex;
+                        gap: 16px;
+                        .social-media-img{
+                            width: 18px;
+                            height: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -32,9 +32,9 @@ const Header = () => {
                     </div>
                     <nav className="airbnb-header-container_contain_nav-one">
                         <ul className={`ul ${handleScroll ? '' : 'dsp-none'}`}>
-                            <li className="li">Stays</li>
-                            <li className="li">Experiences</li>
-                            <li className="li">Online Experiences</li>
+                            <li className="li pointer">Stays</li>
+                            <li className="li pointer">Experiences</li>
+                            <li className="li pointer">Online Experiences</li>
                         </ul>
                         <div className={`search-bar-box ${handleScroll ? 'dsp-none' : ''}`}>
                             <div></div>
