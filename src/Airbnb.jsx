@@ -1,15 +1,15 @@
-import React from 'react';
-import './Airbnb.scss';
-import Header from './shared/layouts/Header';
-import Footer from './shared/layouts/Footer';
+import React from "react";
+import "./Airbnb.scss";
+import AirbnbRoutes from "./shared/routes/AirbnbRoutes";
 
 const Airbnb = () => {
-  return (
-    <>
-      <Header/>
-      <Footer/>
-    </>
-  )
-}
+    return (
+        <>
+            <div>
+                <AirbnbRoutes />
+            </div>
+        </>
+    );
+};
 
-export default Airbnb
+export default Airbnb;
