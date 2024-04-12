@@ -1,5 +1,6 @@
 @import '../styles/common.scss';
 @import '../styles/colors.scss';
+@import '../styles/fonts.scss';
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +8,14 @@
     outline: 0;
     background: transparent;
     box-sizing: border-box;
-    font-family: "Gotham Pro", sans-serif;
+    font-family: "Helvetica Neue", sans-serif;
     font-weight: unset;
     -webkit-tap-highlight-color: transparent;
 }
 
 body {
     background: $white;
-    font-family: "Gotham Pro", sans-serif;
+    font-family: "Helvetica Neue", sans-serif;
     color: inherit !important;
 }
 
@@ -82,7 +83,7 @@ input,
 select {
     vertical-align: middle;
     outline: none;
-    font-family: "Gotham Pro", sans-serif;
+    font-family: "Helvetica Neue", sans-serif;
 }
 
 .container-react-root {
