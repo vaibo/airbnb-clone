@@ -1,9 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.scss";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+    const [handleScroll, setHandleScroll] = useState(true);
 
-    const [ handleScroll, setHandleScroll] = useState(true)
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,34 +27,47 @@ const Header = () => {
             <div className="box-container">
                 <div className="airbnb-header-container_contain">
                     <div className="airbnb-header-container_contain_logo-box">
-                        <img 
-                            src="images/airbnb-logo.svg" 
-                            alt="Logo" 
-                        />
+                        <img src="images/airbnb-logo.svg" alt="Logo" />
                     </div>
                     <nav className="airbnb-header-container_contain_nav-one">
-                        <ul className={`ul ${handleScroll ? '' : 'dsp-none'}`}>
+                        <ul className={`ul ${handleScroll ? "" : "dsp-none"}`}>
                             <li className="li pointer">Stays</li>
                             <li className="li pointer">Experiences</li>
-                            <li className="li pointer">Online Experiences</li>
+                            <li
+                                onClick={() => {
+                                    navigate("/experiences");
+                                }}
+                                className="li pointer"
+                            >
+                                Online Experiences
+                            </li>
                         </ul>
-                        <div className={`search-bar-box ${handleScroll ? 'dsp-none' : ''}`}>
+                        <div
+                            className={`search-bar-box ${
+                                handleScroll ? "dsp-none" : ""
+                            }`}
+                        >
                             <div></div>
                             <div></div>
                             <div></div>
                             <div className="add-guest-box">
                                 <div className="search-box">
-                                    <img 
+                                    <img
                                         className="search-img"
-                                        src="images/search-icon.svg" 
-                                        alt="search" 
+                                        src="images/search-icon.svg"
+                                        alt="search"
                                     />
                                 </div>
                             </div>
                         </div>
                     </nav>
                     <div className="airbnb-header-container_contain_nav-two">
-                        <h6 className="airbnb-home-text pointer">
+                        <h6 
+                            onClick={()=>{
+                                navigate("/home")
+                            }}
+                            className="airbnb-home-text pointer"
+                        >
                             Airbnb your home
                         </h6>
                         <button className="language-world-btn pointer">
