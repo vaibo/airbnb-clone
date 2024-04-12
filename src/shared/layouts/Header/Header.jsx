@@ -97,15 +97,18 @@ const Header = () => {
             <div className="airbnb-header-container_two">
                 <div className="box-container">
                     <div className="second-menu-box">
-                        <div className="menu-slider-box">
-
-                        </div>
+                        <div className="menu-slider-box"></div>
                         <div className="filters-taxes-box">
                             <div className="filter-box">
-
+                                <img
+                                    className="filter-img"
+                                    src="images/filter-icon.svg"
+                                    alt="filter"
+                                />
+                                <h6 className="filters-text">Filters</h6>
                             </div>
                             <div className="display-tax-box">
-
+                                <h6>Display total before taxes</h6>
                             </div>
                         </div>
                     </div>

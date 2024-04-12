@@ -31,6 +31,8 @@
                 }
             }
             .search-bar-box{
+                border: 1px solid $boder-color;
+                border-radius: 32px;
                 .add-guest-box{
                     .search-box{
                         width: 48px;
@@ -86,9 +88,44 @@
             }
         }
     }
+    &_one{
+        box-shadow: rgb(0 0 0/8%) 0 1px 0;
+        
+    }
     &_two{
+        padding: 20px 0;
         .second-menu-box{
-            
+            .filters-taxes-box{
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                .filter-box{
+                    border: 1px solid $boder-color;
+                    border-radius: 12px;
+                    padding: 9px 16px 7px;
+                    display: flex;
+                    gap: 8px;
+                    height: 48px;
+                    width: fit-content;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .filter-img{
+                        width: 16px;
+                        height: 16px;
+                    }
+                    .filters-text{
+                        font-size: 12px;
+                        line-height: 14px;
+                    }
+                }
+                .display-tax-box{
+                    border: 1px solid $boder-color;
+                    border-radius: 12px;
+                    padding: 10px 16px;
+
+                }
+            }
         }
     }
 }
