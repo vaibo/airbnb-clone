@@ -9,6 +9,11 @@
     cursor: pointer;
 }
 
+// -------------------DISPLAY-----------------------
 .dsp-none {
-    display: none;
+    display: none !important;
+}
+
+.flex {
+    display: flex;
 }
