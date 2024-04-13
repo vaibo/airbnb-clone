@@ -23,12 +23,12 @@ const Header = () => {
         };
     }, []);
     return (
-        <header className="airbnb-header-container">
-            <div className="airbnb-header-container_one">
+        <header className={`airbnb-header-container `}>
+            <div className={` airbnb-header-container_one ${ handleScroll ? 'default' : 'scroll' }`}>
                 <div className="box-container">
                     <div className="airbnb-header-container_contain">
                         <div className="airbnb-header-container_contain_logo-box">
-                            <img src="images/airbnb-logo.svg" alt="Logo" />
+                            <img className="logo-img" src="images/airbnb-logo.svg" alt="Logo" />
                         </div>
                         <nav className="airbnb-header-container_contain_nav-one">
                             <ul
