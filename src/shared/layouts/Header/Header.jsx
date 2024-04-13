@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
     const [handleScroll, setHandleScroll] = useState(true);
 
+    const [menuActive, setMenuActive] = useState("Stays")
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -36,13 +38,20 @@ const Header = () => {
                                     handleScroll ? "" : "dsp-none"
                                 }`}
                             >
-                                <li className="li pointer">Stays</li>
-                                <li className="li pointer">Experiences</li>
+                                <li 
+                                    className={`li pointer ${ menuActive === 'Stays' ? 'active' : 'gray'}`}
+                                    onClick={() => setMenuActive('Stays')}
+                                >Stays</li>
+                                <li 
+                                    onClick={() => setMenuActive('Experiences')} 
+                                    className={`li pointer ${ menuActive === 'Experiences' ? 'active' : 'gray'} `}
+                                >Experiences</li>
                                 <li
                                     onClick={() => {
                                         navigate("/experiences");
+                                        setMenuActive('OnlineExp')
                                     }}
-                                    className="li pointer"
+                                    className={`li pointer ${ menuActive === 'OnlineExp' ? 'active' : 'gray'}`}
                                 >
                                     Online Experiences
                                 </li>

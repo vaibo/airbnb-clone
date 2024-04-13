@@ -43,11 +43,24 @@
                     padding: 10px 16px;
                     font-size: 16px;
                     line-height: 20px;
+                    &.gray{
+                        color: $gray;  
+                        font-weight: 400;
+                        &:hover{
+                            background: $hover-gray;
+                            border-radius: 22px;
+                        }
+                    } 
+                    &.active{
+                        font-weight: 600;       
+                        color: $black;
+                    }
                 }
             }
             .search-bar-box{
                 border: 1px solid $boder-color;
                 border-radius: 32px;
+                box-shadow: 0 3px 12px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.08);
                 position: absolute;
                 bottom: 20px;
                 .add-guest-box{
@@ -75,12 +88,22 @@
             justify-content: flex-end;
             flex: 1 0 140px;
             .airbnb-home-text{
-                font-size: 16px;
-                line-height: 20px;
+                font-size: 14px;
+                line-height: 18px;
                 padding: 12px;
+                color: $black;
+                font-weight: 600;
+                &:hover{
+                    background: $hover-gray;
+                    border-radius: 22px;
+                }
             }
             .language-world-btn{
                 padding: 12px;
+                &:hover{
+                    background: $hover-gray;
+                    border-radius: 22px;
+                }
                 .world-language-img{
                     width: 16px;
                     height: 16px;
@@ -94,6 +117,9 @@
                 gap: 14px;
                 padding: 8px;
                 margin-left: 8px;
+                &:hover{
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+                }
                 .hamburger-img{
                     width: 16px;
                     height: 16px;
