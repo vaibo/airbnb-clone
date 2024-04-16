@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
     const [handleScroll, setHandleScroll] = useState(true);
 
-    const [menuActive, setMenuActive] = useState("Stays")
+    const [menuActive, setMenuActive] = useState("Stays");
 
     const navigate = useNavigate();
 
@@ -26,11 +26,19 @@ const Header = () => {
     }, []);
     return (
         <header className={`airbnb-header-container `}>
-            <div className={` airbnb-header-container_one ${ handleScroll ? 'default' : 'scroll' }`}>
+            <div
+                className={` airbnb-header-container_one ${
+                    handleScroll ? "default" : "scroll"
+                }`}
+            >
                 <div className="box-container">
                     <div className="airbnb-header-container_contain">
                         <div className="airbnb-header-container_contain_logo-box">
-                            <img className="logo-img" src="images/airbnb-logo.svg" alt="Logo" />
+                            <img
+                                className="logo-img"
+                                src="images/airbnb-logo.svg"
+                                alt="Logo"
+                            />
                         </div>
                         <nav className="airbnb-header-container_contain_nav-one">
                             <ul
@@ -38,35 +46,129 @@ const Header = () => {
                                     handleScroll ? "" : "dsp-none"
                                 }`}
                             >
-                                <li 
-                                    className={`li pointer ${ menuActive === 'Stays' ? 'active' : 'gray'}`}
-                                    onClick={() => setMenuActive('Stays')}
-                                >Stays</li>
-                                <li 
-                                    onClick={() => setMenuActive('Experiences')} 
-                                    className={`li pointer ${ menuActive === 'Experiences' ? 'active' : 'gray'} `}
-                                >Experiences</li>
+                                <li
+                                    className={`li pointer ${
+                                        menuActive === "Stays"
+                                            ? "active"
+                                            : "gray"
+                                    }`}
+                                    onClick={() => setMenuActive("Stays")}
+                                >
+                                    Stays
+                                </li>
+                                <li
+                                    onClick={() => setMenuActive("Experiences")}
+                                    className={`li pointer ${
+                                        menuActive === "Experiences"
+                                            ? "active"
+                                            : "gray"
+                                    } `}
+                                >
+                                    Experiences
+                                </li>
                                 <li
                                     onClick={() => {
                                         navigate("/experiences");
-                                        setMenuActive('OnlineExp')
+                                        setMenuActive("OnlineExp");
                                     }}
-                                    className={`li pointer ${ menuActive === 'OnlineExp' ? 'active' : 'gray'}`}
+                                    className={`li pointer ${
+                                        menuActive === "OnlineExp"
+                                            ? "active"
+                                            : "gray"
+                                    }`}
                                 >
                                     Online Experiences
                                 </li>
                             </ul>
-                            <div className={`search-bar-box`}>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div className="add-guest-box">
-                                    <div className="search-box">
-                                        <img
-                                            className="search-img"
-                                            src="images/search-icon.svg"
-                                            alt="search"
-                                        />
+                            <div
+                                className={`search-bar-box ${
+                                    handleScroll ? "default" : "scroll"
+                                }`}
+                            >
+                                <div
+                                    className={`menu-serach-bar ${
+                                        handleScroll ? "dsp-none" : ""
+                                    }`}
+                                >
+                                    <div>
+
+                                    </div>
+                                    <div className="border-line"></div>
+                                    <div>
+
+                                    </div>
+                                    <div className="border-line"></div>
+                                    <div>
+
+                                    </div>
+                                </div>
+                                <div
+                                    className={`main-menu-search ${
+                                        handleScroll ? "" : "dsp-none"
+                                    }`}
+                                >
+                                    <div className="search-destination-box">
+                                        <label className="label">
+                                            <h6 className="where-text">
+                                                Where
+                                            </h6>
+                                            <input
+                                                className="search-ip"
+                                                type="search"
+                                                placeholder="Search destintions"
+                                            />
+                                        </label>
+                                    </div>
+                                    <div className="boredr-line"></div>
+                                    <div className="check-in-out-date-box">
+                                        {menuActive === "Stays" ? (
+                                            <div className="stays-box">
+                                                <label className="label">
+                                                    <h6 className="check-text">
+                                                        Check in
+                                                    </h6>
+                                                    <h6 className="add-date-text">
+                                                        Add dates
+                                                    </h6>
+                                                </label>
+                                                <div className="boredr-line"></div>
+                                                <label className="label">
+                                                    <h6 className="check-text">
+                                                        Check out
+                                                    </h6>
+                                                    <h6 className="add-date-text">
+                                                        Add dates
+                                                    </h6>
+                                                </label>
+                                            </div>
+                                        ) : (
+                                            <div className="experience-box">
+                                                <label className="label">
+                                                    <h6 className="date-text">
+                                                        Date
+                                                    </h6>
+                                                    <h6 className="add-date-text">
+                                                        Add dates
+                                                    </h6>
+                                                </label>
+                                            </div>
+                                        )}
+                                    </div>
+                                    <div className="boredr-line"></div>
+                                    <div className="add-guest-box">
+                                        <label className="label">
+                                            <h6 className="who-text">Who</h6>
+                                            <h6 className="guestes-text">
+                                                Add guests
+                                            </h6>
+                                        </label>
+                                        <div className="search-box">
+                                            <img
+                                                className="search-img"
+                                                src="images/search-icon.svg"
+                                                alt="search"
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
