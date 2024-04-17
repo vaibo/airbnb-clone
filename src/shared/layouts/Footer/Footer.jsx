@@ -1,45 +1,65 @@
 import React, { useState } from "react";
 import "./Footer.scss";
-import { FOOTER_DES_MENU, FOOTER_FUTURE_GATEWAY_MENU, FOOTER_MENU_CONSTANTS } from "../../constants/footerConstats";
+import {
+    FOOTER_DES_MENU,
+    FOOTER_FUTURE_GATEWAY_MENU,
+    FOOTER_MENU_CONSTANTS,
+} from "../../constants/footerConstats";
 
-const Footer = () => {
-
-  const [mainMenu, setMainMenu] = useState("Popular")
+const Footer = ({ footerOne }) => {
+    const [mainMenu, setMainMenu] = useState("Popular");
     return (
         <footer className="airbnb-footer-container">
-            <div className="airbnb-footer-container_footer-one">
-                <div className="box-container">
-                    <div className="footer-future-gateway-menu-box">
-                        <h2 className="title">
-                            Inspiration for future getaways
-                        </h2>
-                        <div className="menu-list-box">
-                            <div className="main-menu-box">
-                                {FOOTER_FUTURE_GATEWAY_MENU.map((i) => {
-                                    return (
-                                        <div onClick={()=>setMainMenu(i.label)} className={`main-menu-label  pointer ${ i.label === mainMenu ? 'active' : ''}`}>
-                                            <h6 className="text">{i.label}</h6>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                            <div className="border-line"></div>
-                            <div className="submenu-box">
-                              {
-                                FOOTER_FUTURE_GATEWAY_MENU.find(m => m.label === mainMenu).menu.map((el)=>{
-                                  return(
-                                    <div className="submenu-text-box">
-                                      <h6 className="submenu-lebel">{el.label}</h6>
-                                      <h6 className="submenu-sublabel">{el.subLabel}</h6>
-                                    </div>
-                                  )
-                                })
-                              }  
+            {footerOne && (
+                <div className="airbnb-footer-container_footer-one">
+                    <div className="box-container">
+                        <div className="footer-future-gateway-menu-box">
+                            <h2 className="title">
+                                Inspiration for future getaways
+                            </h2>
+                            <div className="menu-list-box">
+                                <div className="main-menu-box">
+                                    {FOOTER_FUTURE_GATEWAY_MENU.map((i) => {
+                                        return (
+                                            <div
+                                                onClick={() =>
+                                                    setMainMenu(i.label)
+                                                }
+                                                className={`main-menu-label  pointer ${
+                                                    i.label === mainMenu
+                                                        ? "active"
+                                                        : ""
+                                                }`}
+                                            >
+                                                <h6 className="text">
+                                                    {i.label}
+                                                </h6>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                                <div className="border-line"></div>
+                                <div className="submenu-box">
+                                    {FOOTER_FUTURE_GATEWAY_MENU.find(
+                                        (m) => m.label === mainMenu
+                                    ).menu.map((el) => {
+                                        return (
+                                            <div className="submenu-text-box">
+                                                <h6 className="submenu-lebel">
+                                                    {el.label}
+                                                </h6>
+                                                <h6 className="submenu-sublabel">
+                                                    {el.subLabel}
+                                                </h6>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            )}
             <div className="airbnb-footer-container_footer-two">
                 <div className="box-container">
                     <div className="airbnb-footer-container_footer-two_contain">

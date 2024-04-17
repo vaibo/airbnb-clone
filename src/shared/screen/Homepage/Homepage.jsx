@@ -18,7 +18,9 @@ const Homepage = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
+            <Footer
+                footerOne={true}
+            />
         </div>
     );
 };

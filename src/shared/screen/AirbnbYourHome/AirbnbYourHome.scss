@@ -1,0 +1,38 @@
+@import '../../styles/colors.scss';
+
+.airbnb-your-home-main-container{
+    .airbnb-your-home-header-box{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        .header-container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .airbnb-setup-main-box{
+                display: flex;
+                align-items: center;
+                gap: 24px;
+                .raedy-airbnb-text{
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: $black;
+                }
+                .airbnb-setup-box{
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    .home-img{
+                        width: 24px;
+                        height: 24px;
+                    }
+                    .airbnb-setup-text{
+                        font-size: 18px;
+                        line-height: 24px;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}

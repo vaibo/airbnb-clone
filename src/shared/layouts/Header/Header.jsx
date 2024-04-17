@@ -133,10 +133,10 @@ const Header = () => {
                                 <div
                                     className={`main-menu-search ${
                                         handleScroll ? "" : "dsp-none"
-                                    }`}
+                                    } ${ [ 'Destination', 'CheckIn', 'CheckOut', 'Dates', 'Guest'].includes(searchMenu) ? "click-gray" : ""}`}
                                 >
                                     <div className="search-destination-box">
-                                        <label onClick={()=>setSearchMenu("Destination")} className={`label ${searchMenu === 'Destination' ? 'active' : ''}`}>
+                                        <label onClick={()=>setSearchMenu("Destination")} className={`label pointer ${searchMenu === 'Destination' ? 'active' : 'hover'}`}>
                                             <h6 className="where-text">
                                                 Where
                                             </h6>
@@ -151,7 +151,7 @@ const Header = () => {
                                     <div className="check-in-out-date-box">
                                         {menuActive === "Stays" ? (
                                             <div className="stays-box">
-                                                <label onClick={()=>setSearchMenu("Dates")} className={`label ${searchMenu === 'Dates' ? 'active' : ''}`}>
+                                                <label onClick={()=>setSearchMenu("CheckIn")} className={`label pointer ${searchMenu === 'CheckIn' ? 'active' : 'hover'}`}>
                                                     <h6 className="check-text">
                                                         Check in
                                                     </h6>
@@ -160,7 +160,7 @@ const Header = () => {
                                                     </h6>
                                                 </label>
                                                 <div className="border-line"></div>
-                                                <label onClick={()=>setSearchMenu("Dates")} className={`label ${searchMenu === 'Dates' ? 'active' : ''}`}>
+                                                <label onClick={()=>setSearchMenu("CheckOut")} className={`label pointer ${searchMenu === 'CheckOut' ? 'active' : 'hover'}`}>
                                                     <h6 className="check-text">
                                                         Check out
                                                     </h6>
@@ -171,7 +171,7 @@ const Header = () => {
                                             </div>
                                         ) : (
                                             <div className="experience-box">
-                                                <label onClick={ ()=>setSearchMenu("Dates") } className={`label ${searchMenu === 'Dates' ? 'active' : ''}`}>
+                                                <label onClick={ ()=>setSearchMenu("Dates") } className={`label pointer ${searchMenu === 'Dates' ? 'active' : 'hover'}`}>
                                                     <h6 className="date-text">
                                                         Date
                                                     </h6>
@@ -182,8 +182,8 @@ const Header = () => {
                                             </div>
                                         )}
                                     </div>
-                                    <div className="border-line"></div>
-                                    <div onClick={()=>setSearchMenu("Guest")} className={`add-guest-box ${searchMenu === 'Guest' ? 'active' : ''}`}>
+                                    <div className={`border-line ${['CheckOut', 'Guest', 'Dates'].includes(searchMenu) ? 'hidden' : '' }`}></div>
+                                    <div onClick={()=>setSearchMenu("Guest")} className={`add-guest-box pointer ${searchMenu === 'Guest' ? 'active' : 'hover'}`}>
                                         <label className="label">
                                             <h6 className="who-text">Who</h6>
                                             <h6 className="guestes-text">
@@ -203,11 +203,11 @@ const Header = () => {
                                         (<DestinationPopup/>) 
                                     }
                                     {
-                                        searchMenu === 'Dates' && 
+                                        ['CheckIn', 'CheckOut', 'Dates'].includes(searchMenu)  && 
                                         (<DatesPopup/>)
                                     }
                                     {
-                                        searchMenu === 'Guest' && 
+                                        searchMenu === 'Guest'  && 
                                         (<GuestPopup/>)
                                     }
                                 </div>
