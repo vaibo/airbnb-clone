@@ -1,0 +1,9 @@
+@import '../../styles/colors.scss';
+
+.datespopup-conatiner{
+    background-color: $white;
+    margin-block-start: 12px;
+    position: absolute;
+    z-index: 1;
+    top: 66px;
+}

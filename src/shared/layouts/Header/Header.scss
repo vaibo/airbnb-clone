@@ -67,24 +67,75 @@
                 margin: 0 auto;
                 max-width: 850px;
                 width: 100%;
-                bottom: 20px;
+                bottom: 15px;
                 &.scroll{
                     max-width: 348px;
+
+                }
+                .menu-serach-bar{
+                    display: grid;
+                    grid-template-columns: 1fr auto 1fr auto 1fr;
+                    height: 48px;
+                    align-items: center;
+                    padding-left: 8px;
+                    .border-line{
+                        display: block;
+                        background-color: $boder-color;
+                        height: 24px;
+                        width: 1px;
+                    }
+                    .anywherep-box{
+                        display: flex;
+                        align-items: center;
+                        .anywhere-text{
+                            padding: 0 16px;
+                            font-size: 14px;
+                            line-height: 22px;
+                            white-space: nowrap;
+                            &.black{
+                                color: $black;
+                            }
+                            &.gray{
+                                color: $gray;
+                            }
+                        }
+                        .search-box{
+                            width: 32px;
+                            height: 32px;
+                            border-radius: 24px;
+                            margin-right: 9px;
+                            background-color: $red ;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            .search-img{
+                                width: 12px;
+                                height: 12px;
+                            }
+                        }
+                    }
+                   
+                    &:hover{
+                        box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+                        border-radius: 40px;
+                    }
+                    
+
 
                 }
                 .main-menu-search{
                     display: grid;
                     grid-template-columns: 1fr auto 1fr auto 1fr;
                     align-items: center;
-
-                    .boredr-line{
+                    position: relative;
+                    .border-line{
                         display: block;
                         background-color: $boder-color;
                         height: 32px;
                         width: 1px;
                     }
                     .search-destination-box{
-
+                        
                         .label{
                             padding: 14px 32px;
                             flex: 1 0 0%;
@@ -106,10 +157,13 @@
                                 color: $black;
     
                             }
-                        }
-                        &:hover{
-                            background-color: #EBEBEB;
-                            border-radius: 32px;
+                            &:hover{
+                                background-color: #EBEBEB;
+                                border-radius: 32px;
+                            }
+                            &.active{
+                                box-shadow: 0 3px 12px 0 rgb(0 0 0/0.1), 0 1px 2px 0 rgb(0 0 0/0.08);
+                            }
                         }
     
                     }
@@ -138,6 +192,9 @@
                                     background-color: #EBEBEB;
                                     border-radius: 32px;
                                 }
+                                &.active{
+                                    box-shadow: 0 3px 12px 0 rgb(0 0 0/0.1), 0 1px 2px 0 rgb(0 0 0/0.08);
+                                }
                             }
     
                         }
@@ -161,6 +218,9 @@
                                 &:hover{
                                     background-color: #EBEBEB;
                                     border-radius: 32px;
+                                }
+                                &.active{
+                                    box-shadow: 0 3px 12px 0 rgb(0 0 0/0.1), 0 1px 2px 0 rgb(0 0 0/0.08);
                                 }
                             }
     
@@ -207,15 +267,7 @@
                     }
                 }
 
-                .menu-serach-bar{
-                    .boredr-line{
-                        display: block;
-                        background-color: $boder-color;
-                        height: 32px;
-                        width: 1px;
-                    }
 
-                }
 
 
             }
@@ -285,6 +337,60 @@
     &_two{
         padding: 20px 0;
         .second-menu-box{
+            display: flex;
+            align-items: center;
+            .menu-slider-box{
+                max-width: 950px;
+                width: 100%;
+            
+                .slick-slider{
+                    &.slick-initialized{
+                        .slick-list{
+                            .slick-track{
+                                display: flex;
+                                
+
+                                .slick-slide{
+                                    margin: 0 16px;
+                                    &:first-child{
+                                        margin-left: 0;
+                                    }
+    
+                                   
+                                    &.slick-active{
+                                    }
+                                    &.slick-current{
+                                    }
+    
+    
+                                }
+                            }
+                        }
+                    }
+                }
+                .menu-img-label-box{
+                    display: flex !important;
+                    flex-direction: column;
+                    gap: 8px;
+                    align-items: center;
+                    min-width: 56px;
+                    .img-box{
+                        width: 24px;
+                        height: 24px;
+                        .menu-img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .label{
+                        font-size: 12px;
+                        line-height: 16px;
+                        white-space: nowrap;
+                    }
+
+                }
+                
+            }
             .filters-taxes-box{
                 display: flex;
                 align-items: center;

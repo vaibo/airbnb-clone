@@ -1,13 +1,28 @@
 import React, { useEffect, useState } from "react";
 import "./Header.scss";
 import { useNavigate } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { HEADERS_MENU_CONSTANTS } from "../../constants/headersConstants";
+import DestinationPopup from "../../popups/DestinationPopup";
+import DatesPopup from "../../popups/DatesPopup";
+import GuestPopup from "../../popups/GuestPopup";
 
 const Header = () => {
     const [handleScroll, setHandleScroll] = useState(true);
 
     const [menuActive, setMenuActive] = useState("Stays");
+    const [searchMenu, setSearchMenu] = useState("");
 
     const navigate = useNavigate();
+    var settings = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 10,
+        slidesToScroll: 10,
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -90,17 +105,30 @@ const Header = () => {
                                         handleScroll ? "dsp-none" : ""
                                     }`}
                                 >
-                                    <div>
-
-                                    </div>
+                                    <button className="anywherep-box">
+                                        <h6 className="anywhere-text black">
+                                            Anywhere
+                                        </h6>
+                                    </button>
                                     <div className="border-line"></div>
-                                    <div>
-
-                                    </div>
+                                    <button className="anywherep-box">
+                                        <h6 className="anywhere-text black">
+                                            Any week
+                                        </h6>
+                                    </button>
                                     <div className="border-line"></div>
-                                    <div>
-
-                                    </div>
+                                    <button className="anywherep-box">
+                                        <h6 className="anywhere-text gray">
+                                            Add guests
+                                        </h6>
+                                        <div className="search-box">
+                                            <img
+                                                className="search-img"
+                                                src="images/search-icon.svg"
+                                                alt="search"
+                                            />
+                                        </div>
+                                    </button>
                                 </div>
                                 <div
                                     className={`main-menu-search ${
@@ -108,7 +136,7 @@ const Header = () => {
                                     }`}
                                 >
                                     <div className="search-destination-box">
-                                        <label className="label">
+                                        <label onClick={()=>setSearchMenu("Destination")} className={`label ${searchMenu === 'Destination' ? 'active' : ''}`}>
                                             <h6 className="where-text">
                                                 Where
                                             </h6>
@@ -119,11 +147,11 @@ const Header = () => {
                                             />
                                         </label>
                                     </div>
-                                    <div className="boredr-line"></div>
+                                    <div className="border-line"></div>
                                     <div className="check-in-out-date-box">
                                         {menuActive === "Stays" ? (
                                             <div className="stays-box">
-                                                <label className="label">
+                                                <label onClick={()=>setSearchMenu("Dates")} className={`label ${searchMenu === 'Dates' ? 'active' : ''}`}>
                                                     <h6 className="check-text">
                                                         Check in
                                                     </h6>
@@ -131,8 +159,8 @@ const Header = () => {
                                                         Add dates
                                                     </h6>
                                                 </label>
-                                                <div className="boredr-line"></div>
-                                                <label className="label">
+                                                <div className="border-line"></div>
+                                                <label onClick={()=>setSearchMenu("Dates")} className={`label ${searchMenu === 'Dates' ? 'active' : ''}`}>
                                                     <h6 className="check-text">
                                                         Check out
                                                     </h6>
@@ -143,7 +171,7 @@ const Header = () => {
                                             </div>
                                         ) : (
                                             <div className="experience-box">
-                                                <label className="label">
+                                                <label onClick={ ()=>setSearchMenu("Dates") } className={`label ${searchMenu === 'Dates' ? 'active' : ''}`}>
                                                     <h6 className="date-text">
                                                         Date
                                                     </h6>
@@ -154,8 +182,8 @@ const Header = () => {
                                             </div>
                                         )}
                                     </div>
-                                    <div className="boredr-line"></div>
-                                    <div className="add-guest-box">
+                                    <div className="border-line"></div>
+                                    <div onClick={()=>setSearchMenu("Guest")} className={`add-guest-box ${searchMenu === 'Guest' ? 'active' : ''}`}>
                                         <label className="label">
                                             <h6 className="who-text">Who</h6>
                                             <h6 className="guestes-text">
@@ -170,6 +198,18 @@ const Header = () => {
                                             />
                                         </div>
                                     </div>
+                                    {
+                                        searchMenu === 'Destination'  &&
+                                        (<DestinationPopup/>) 
+                                    }
+                                    {
+                                        searchMenu === 'Dates' && 
+                                        (<DatesPopup/>)
+                                    }
+                                    {
+                                        searchMenu === 'Guest' && 
+                                        (<GuestPopup/>)
+                                    }
                                 </div>
                             </div>
                         </nav>
@@ -208,7 +248,26 @@ const Header = () => {
             <div className="airbnb-header-container_two">
                 <div className="box-container">
                     <div className="second-menu-box">
-                        <div className="menu-slider-box"></div>
+                        <div className="menu-slider-box">
+                            <Slider {...settings}>
+                                {
+                                    HEADERS_MENU_CONSTANTS.map((i)=>{
+                                        return (
+                                            <div className="menu-img-label-box">
+                                                <div className="img-box">
+                                                    <img
+                                                        className="menu-img"
+                                                        src={i.img}
+                                                        alt="Menu"
+                                                    />
+                                                </div>
+                                                <h5 className="label">{i.label}</h5>
+                                            </div>
+                                        );
+                                    })
+                                }
+                            </Slider>
+                        </div>
                         <div className="filters-taxes-box">
                             <div className="filter-box">
                                 <img
